@@ -110,7 +110,7 @@ def stop_animations(animations):
     for animation in animations:
         if animation.running:
             animation.stop()
-            
+
 
 
 
