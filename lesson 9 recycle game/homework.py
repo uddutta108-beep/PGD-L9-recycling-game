@@ -58,7 +58,7 @@ def get_option_to_create(number_of_extra_items):
 def create_items(items_to_create):
     new_items = []
     for i in items_to_create:
-        item = actor(i)
+        item = Actor(i)
         new_items.nd(item)
     return new_items
 
@@ -77,5 +77,36 @@ def animate_items(new_items):
         duration = START_SPEED - current_level
         animation = animate(item,duration=duration, on_finished=handle_game_over, y=HEIGHT)
         animations.append(animation)
+
+def handle_game_over():
+    global game_over
+    game_over = True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 pgzrun.go()

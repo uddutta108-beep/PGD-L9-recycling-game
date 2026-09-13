@@ -83,4 +83,58 @@ def animate_items(new_items):
         animation = animate(item,duration=duration, on_finished=handle_game_over, y=HEIGHT)
         animations.append(animation)
 
+def handle_game_over():
+    global game_over
+    game_over = True
+
+def on_mouse_down(pos):
+    global items
+    for item in items:
+        if item.collidepoint(pos):
+            if "paper" in item.image:
+                handle_game_complete()
+            else:
+                handle_game_over()
+
+def handle_game_complete():
+    global current_level, items, animations, game_complete
+    stop_animations(animations)
+    if current_level == FINAL_LEVEL:
+        game_complete = True
+    else:
+        current_level = current_level + 1
+        items = []
+        animations = []
+
+def stop_animations(animations):
+    for animation in animations:
+        if animation.running:
+            animation.stop()
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 pgzrun.go()
