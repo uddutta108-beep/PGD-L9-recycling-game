@@ -49,7 +49,7 @@ def make_items(number_of_extra_items):
     return new_items
 
 def get_option_to_create(number_of_extra_items):
-    items_to_create = [apple]
+    items_to_create = ["apple"]
     for i in range(0,number_of_extra_items):
         item = random.choice(ITEMS)
         items_to_create.append(item)
@@ -75,7 +75,7 @@ def animate_items(new_items):
     global animations
     for item in new_items:
         duration = START_SPEED - current_level
-        animation = animate(item,duration=duration, on_finished=handle game over, y=HEIGHT)
+        animation = animate(item,duration=duration, on_finished=handle_game_over, y=HEIGHT)
         animations.append(animation)
 
 pgzrun.go()
